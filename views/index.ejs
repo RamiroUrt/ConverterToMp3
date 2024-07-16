@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube converter to Mp3</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <div class="top-container">
+        <div class="logo">
+            <img src="/img/fondo.png" alt="">
+        </div>
+        <form action="/convert-mp3" method="post" id="form">
+            <h1><i class="fa-brands fa-youtube"></i>YouTube MP3 Converter</h1>
+            <h4>Enter the video ID</h4>
+            <div class="input-group">
+                <input type="text" name="videoId" id="videoId" placeholder="Video Url...">
+                <button id="convert-btn">Convert</button>
+            </div>
+        </form>
+    </div>
+    
+    
+    <div class="bottom-container">
+      <% if (typeof success !== "undefined" && success) { %>
+        <div class="success">
+          <p><%= song_title %></p>
+          <img src="<%= thumbnail %>" alt="<%= song_title %> Thumbnail" />
+          <a href="<%= song_link %>"><button id="download-btn">DOWNLOAD</button></a>
+        </div>
+        <% } else if (typeof success !== "undefined" && !success) { %>
+          <div class="errors">
+            <p><%= message %></p>
+          </div>
+          <% } %>
+        </div>
+
+        
+        <section class="tutorial-text">
+          <h3>Tutorial</h3>
+          <div class="pasos">
+            <div class="paso1">
+              <img src="/img/Tutorial1.png" alt="">
+              <h4>Step 1</h4>
+              <p>Copy Video ID</p>
+            </div>
+            <div class="paso2">
+              <img src="/img/Tutorial2.png" alt="">
+              <h4>Step 2</h4>
+              <p>Paste Id, click convert and download</p>
+            </div>
+          </div>
+        </section>
+</body>
+</html>
